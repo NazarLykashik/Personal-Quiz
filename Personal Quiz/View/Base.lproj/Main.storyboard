@@ -228,12 +228,6 @@
                             <constraint firstItem="UWh-x7-VQh" firstAttribute="trailing" secondItem="vqd-wv-5Wo" secondAttribute="trailing" constant="20" id="oQd-66-4U3"/>
                             <constraint firstItem="vqd-wv-5Wo" firstAttribute="leading" secondItem="UWh-x7-VQh" secondAttribute="leading" constant="20" id="zcp-eo-vUT"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="lEW-T0-UWP"/>
-                                <exclude reference="OiO-33-xB9"/>
-                            </mask>
-                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Вопрос №" id="f5T-x3-dWZ">
                         <barButtonItem key="rightBarButtonItem" title="3=&gt;" id="H4v-Qu-lhB">
@@ -316,7 +310,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="JrD-AF-wFo"/>
+        <segue reference="6uW-BW-pAt"/>
     </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">
