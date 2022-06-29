@@ -183,7 +183,7 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="OiO-33-xB9">
+                            <stackView autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="OiO-33-xB9">
                                 <rect key="frame" x="20" y="253" width="280" height="106"/>
                                 <subviews>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="yCU-b4-JM1">
@@ -243,12 +243,6 @@
                             <constraint firstItem="9PT-Pp-Mj0" firstAttribute="leading" secondItem="UWh-x7-VQh" secondAttribute="leading" id="xIR-W1-n7A"/>
                             <constraint firstItem="vqd-wv-5Wo" firstAttribute="leading" secondItem="UWh-x7-VQh" secondAttribute="leading" constant="20" id="zcp-eo-vUT"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="lEW-T0-UWP"/>
-                                <exclude reference="vqd-wv-5Wo"/>
-                            </mask>
-                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Вопрос №" id="f5T-x3-dWZ">
                         <barButtonItem key="rightBarButtonItem" title="3=&gt;" id="H4v-Qu-lhB">
@@ -259,6 +253,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="multipleStackView" destination="vqd-wv-5Wo" id="fd9-OF-78P"/>
+                        <outlet property="qeustionProgreView" destination="9PT-Pp-Mj0" id="xrw-vn-cIT"/>
                         <outlet property="questionLabel" destination="qMp-1c-c4e" id="ImW-bu-oNe"/>
                         <outlet property="rangedSlider" destination="yCU-b4-JM1" id="euy-3k-tPC"/>
                         <outlet property="rangedStackView" destination="OiO-33-xB9" id="a5E-WI-1mj"/>
