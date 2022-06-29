@@ -77,4 +77,12 @@ class QuestionViewController: UIViewController {
         // show single stack view
         singleStackView.isHidden = false
     }
+    /// Setup multiple stack view
+    ///
+    /// - Parameter answers: array with  answers
+    ///
+    /// description 
+    private func updateMultipleSrackView(using answers: [Answer]){
+        
+    }
 }
