@@ -25,10 +25,11 @@ class QuestionViewController: UIViewController {
     
     @IBOutlet weak var qeustionProgreView: UIProgressView!
     
-    //MARK: Private Properties
+    //MARK: - Private Properties
     
     private let questions = Question.getQuestions()
     private var questionIndex = 0
+    private var answersChoosen: [Answer] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,8 +37,19 @@ class QuestionViewController: UIViewController {
 
 
     }
- 
-    //MARK: Private Metods
+    
+    // MARK: - IB Actions
+    @IBAction func singleAnswerButtonPressed(_ sender: UIButton) {
+        let currentAnswers =  questions[questionIndex].ansvers
+        guard let currentIndex = singleButtons.firstIndex(of: sender) else {return}
+        let currentAnswer = currentAnswers[currentIndex]
+        answersChoosen.append(currentAnswer)
+        
+        nextQuestion()
+    }
+    
+    
+    //MARK: - Private Metods
     
     //Uppdate user interface
     private func uppdateIU(){
@@ -62,9 +74,9 @@ class QuestionViewController: UIViewController {
         case .single:
             updateSingleStackView(using: currentAnswers)
         case .multiple:
-            break
+            updateMultipleSrackView(using: currentAnswers)
         case .ranged:
-            break
+            updateRangedSrackView(using: currentAnswers)
             
         }
     }
@@ -76,6 +88,10 @@ class QuestionViewController: UIViewController {
     private func updateSingleStackView(using answers: [Answer]){
         // show single stack view
         singleStackView.isHidden = false
+        
+        for (button, answer) in zip(singleButtons, answers) {
+            button.setTitle(answer.text, for: .normal)
+        }
     }
     /// Setup multiple stack view
     ///
@@ -83,6 +99,33 @@ class QuestionViewController: UIViewController {
     ///
     /// description 
     private func updateMultipleSrackView(using answers: [Answer]){
+        // show multiple stack view
+        multipleStackView.isHidden = false
         
+        for (label, answer) in zip(multipleLabels, answers) {
+            label.text = answer.text
+        }
+    }
+    /// Setup ranged stack view
+    ///
+    /// - Parameter answers: array with  answers
+    ///
+    /// description
+    private func updateRangedSrackView(using answers: [Answer]){
+        // show ranged stack view
+        rangedStackView.isHidden = false
+        
+        rangedLables.first?.text = answers.first?.text
+        rangedLables.last?.text = answers.last?.text
+    }
+    //MARK: - Navigation
+    // show next question or go to the next screen
+    private func nextQuestion() {
+    // TODO: Implement the func
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        <#code#>
     }
 }
