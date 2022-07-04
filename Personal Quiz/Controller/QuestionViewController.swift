@@ -56,11 +56,13 @@ class QuestionViewController: UIViewController {
                 answersChoosen.append(answer)
             }
         }
-        nextQuestion()
+            nextQuestion()
     }
     @IBAction func rangedAnswerButtonPressed() {
         let currentAnswers = questions[questionIndex].ansvers
-        
+        let index = Int(round(rangedSlider.value * Float(currentAnswers.count - 1)))
+        answersChoosen.append(currentAnswers[index])
+        nextQuestion()
     }
     
     
@@ -78,7 +80,7 @@ class QuestionViewController: UIViewController {
         // Set current question for current qestion
         questionLabel.text = currentQuestion.text
         //  calculate progress
-        let totalProgress = Float(questionIndex / questions.count)
+        let totalProgress = Float(questionIndex) / Float(questions.count)
         // Set progress for question progress view
         qeustionProgreView.setProgress(totalProgress, animated: true)
         //  set navigation title
@@ -137,11 +139,21 @@ class QuestionViewController: UIViewController {
     //MARK: - Navigation
     // show next question or go to the next screen
     private func nextQuestion() {
-    // TODO: Implement the func
+    questionIndex += 1
+        
+        if questionIndex < questions.count {
+            uppdateIU()
+        }else{
+            performSegue(withIdentifier: "resultSegue", sender: nil)
+        }
         
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        <#code#>
+        guard segue.identifier == "resultSegue" else {return}
+        let resultVC = segue.destination as! ResultsViewController
+        resultVC.responses = answersChoosen
     }
 }
+
+

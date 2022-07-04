@@ -193,8 +193,7 @@
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="Ответить"/>
                                         <connections>
-                                            <action selector="multipleAnswerButtonPressed" destination="HFt-nP-EAa" eventType="touchUpInside" id="OnK-bC-rNQ"/>
-                                            <action selector="multipleAnswerButtonPresses:" destination="HFt-nP-EAa" eventType="touchUpInside" id="7UZ-Ct-PiP"/>
+                                            <action selector="multipleAnswerButtonPressed" destination="HFt-nP-EAa" eventType="touchUpInside" id="sYp-N6-OCp"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -228,7 +227,7 @@
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="Ответить"/>
                                         <connections>
-                                            <action selector="rangedAnswerButtonPressed" destination="HFt-nP-EAa" eventType="touchUpInside" id="vMY-wb-nH8"/>
+                                            <action selector="rangedAnswerButtonPressed" destination="HFt-nP-EAa" eventType="touchUpInside" id="jSW-7z-IBF"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -263,13 +262,7 @@
                             <constraint firstItem="vqd-wv-5Wo" firstAttribute="leading" secondItem="UWh-x7-VQh" secondAttribute="leading" constant="20" id="zcp-eo-vUT"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Вопрос №" id="f5T-x3-dWZ">
-                        <barButtonItem key="rightBarButtonItem" title="3=&gt;" id="H4v-Qu-lhB">
-                            <connections>
-                                <segue destination="qqv-oD-oc2" kind="show" id="6uW-BW-pAt"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Вопрос №" id="f5T-x3-dWZ"/>
                     <connections>
                         <outlet property="multipleStackView" destination="vqd-wv-5Wo" id="fd9-OF-78P"/>
                         <outlet property="qeustionProgreView" destination="9PT-Pp-Mj0" id="xrw-vn-cIT"/>
@@ -338,10 +331,14 @@
                     <navigationItem key="navigationItem" title="Результаты" id="idZ-Jd-B38">
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="5Yq-Ja-qmo">
                             <connections>
-                                <segue destination="9AJ-dl-soz" kind="unwind" unwindAction="unwindSegie:" id="18u-P6-9vP"/>
+                                <segue destination="9AJ-dl-soz" kind="unwind" unwindAction="unwindSegie:" id="UFF-rf-6Ya"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="resultAnswerLabel" destination="dPC-FE-hxt" id="zhs-Kq-CJr"/>
+                        <outlet property="resultDefenitionLabel" destination="X15-pr-MP5" id="eYg-Uh-ZA5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jyf-zf-5dv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="9AJ-dl-soz" userLabel="Exit" sceneMemberID="exit"/>
@@ -368,9 +365,6 @@
             <point key="canvasLocation" x="799" y="83"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="6uW-BW-pAt"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
